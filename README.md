@@ -16,7 +16,6 @@ Lab-5/
 ├── results/
     ├── clean_samples.csv
     ├── feature_table.tsv
-├── scripts
 ├── .gitignore      
 └── AI_USAGE.md
 ```
