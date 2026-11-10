@@ -3,7 +3,7 @@ library(stringr)
 library(lubridate)
 library(tidyr)
 
-samples <- read.csv("messy_samples.csv", stringsAsFactors = FALSE)
+samples <- read.csv("data/messy_samples.csv", stringsAsFactors = FALSE)
 samples[13, 'sex']
 samples[samples == ""] <- NA
 samples2 <- samples %>%
@@ -63,4 +63,4 @@ samples2 <- samples2 %>%
 
 head(samples2)
 
-write.csv(samples2, "clean_samples.csv", row.names = FALSE, na = "")
+write.csv(samples2, "results/clean_samples.csv", row.names = FALSE, na = "")
