@@ -7,7 +7,15 @@ Lab-5/
 ├── environment.yml
 ├── renv.lock
 ├── Snakefile
-├── data
+├── data/
+    ├── messy_samples.csv
+    ├── cohort.db
+├── scripts/
+    ├── features.py
+    ├── samples.R
+├── results/
+    ├── clean_samples.csv
+    ├── feature_table.tsv
 ├── scripts
 ├── .gitignore      
 └── AI_USAGE.md
