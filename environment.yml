@@ -8,3 +8,8 @@ dependencies:
   - snakemake>=9
   - matplotlib
   - jupyterlab
+  - r-base=4.5
+  - r-dplyr
+  - r-tidyr
+  - r-stringr
+  - r-lubridate
