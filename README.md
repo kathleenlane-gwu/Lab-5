@@ -19,6 +19,9 @@ Lab-5/
     ├── feature_table.tsv
     ├── summary_figure.png
     ├── summary_report.md
+├── evidence/
+    ├── 01_clean_run.txt
+    ├── 03_partial_rerun.txt
 ├── .gitignore      
 └── AI_USAGE.md
 ```
