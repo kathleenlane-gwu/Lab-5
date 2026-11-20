@@ -5,7 +5,6 @@ Repository for Lab 5
 Lab-5/
 ├── README.md
 ├── environment.yml
-├── renv.lock
 ├── Snakefile
 ├── data/
     ├── messy_samples.csv
