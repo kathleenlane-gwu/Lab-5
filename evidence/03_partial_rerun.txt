@@ -1,0 +1,107 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-11-18 14:08:13
+  Workflow ID: 16e4f579-4099-43cd-a193-a5adbd11b17a
+  Platform: macOS-26.4-arm64-arm-64bit
+  Host: Kathleens-MacBook-Pro.local
+  User: kathleenlane
+  Snakemake version: 9.27.2
+  Python version: 3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]
+  Command: /Users/kathleenlane/miniforge3/envs/Lab-5/bin/snakemake --cores 1 -p
+  Snakefile: /Users/kathleenlane/Documents/PUBH_6854/Lab-5/Snakefile
+  Base directory: /Users/kathleenlane/Documents/PUBH_6854/Lab-5
+  Run directory: /Users/kathleenlane/Documents/PUBH_6854/Lab-5
+  Working directory: /Users/kathleenlane/Documents/PUBH_6854/Lab-5
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+clean_samples         1
+summary_report        1
+all                   1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 18 14:08:13 2026]
+localrule clean_samples:
+    input: data/messy_samples.csv, scripts/samples.R
+    output: results/clean_samples.csv
+    jobid: 1
+    reason: Missing output files: results/clean_samples.csv
+    resources: tmpdir=/var/folders/24/5dj4g9l12l7gb157435_vtyc0000gn/T
+Shell command: Rscript scripts/samples.R
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+[1] ""
+  sample_id glucose_value glucose_unit patient_name        dob sex
+1     S0001          75.4        mg/dL    A. Nguyen 1962-07-09   F
+2     S0002         120.0        mg/dL     T. Patel 1974-12-16   M
+3     S0003          84.2        mg/dL  R. Martinez 2053-11-24   F
+4     S0004         120.0        mg/dL     B. Smith 1975-12-18   F
+5     S0005         248.1        mg/dL  B. Martinez 1997-12-02   M
+6     S0007         225.0        mg/dL  T. Martinez 1969-09-04   U
+  enrollment_site notes
+1          Site A  <NA>
+2          Site A  <NA>
+3          Site B  <NA>
+4          Site B  <NA>
+5          Site A  <NA>
+6          Site A  <NA>
+[Wed Nov 18 14:08:13 2026]
+Finished jobid: 1 (Rule: clean_samples)
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 18 14:08:13 2026]
+localrule summary_report:
+    input: results/clean_samples.csv, results/feature_table.tsv, scripts/report.py
+    output: results/summary_report.md, results/summary_figure.png
+    jobid: 3
+    reason: Input files updated by another job: results/clean_samples.csv
+    resources: tmpdir=/var/folders/24/5dj4g9l12l7gb157435_vtyc0000gn/T
+Shell command: python scripts/report.py
+[Wed Nov 18 14:08:14 2026]
+Finished jobid: 3 (Rule: summary_report)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 18 14:08:14 2026]
+localrule all:
+    input: results/clean_samples.csv, results/feature_table.tsv, results/summary_report.md, results/summary_figure.png
+    jobid: 0
+    reason: Input files updated by another job: results/clean_samples.csv, results/summary_figure.png, results/summary_report.md
+    resources: tmpdir=/var/folders/24/5dj4g9l12l7gb157435_vtyc0000gn/T
+Shell command: None
+[Wed Nov 18 14:08:14 2026]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): /Users/kathleenlane/Documents/PUBH_6854/Lab-5/.snakemake/log/2026-11-18T140813.384838.snakemake.log
+Elapsed time: 0:00:01.045960

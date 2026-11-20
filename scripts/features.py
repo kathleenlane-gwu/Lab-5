@@ -1,5 +1,5 @@
 import sqlite3, pandas as pd
-con = sqlite3.connect('scripts/cohort.db')
+con = sqlite3.connect('data/cohort.db')
 def q(sql): return pd.read_sql(sql, con)
 
 task_one = q('''SELECT p.patient_id, m.gene_symbol, COUNT(m.variant_classification) AS protein_altering_mutations
